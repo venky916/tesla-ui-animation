@@ -6,7 +6,7 @@ import carSideView from '../assets/carsideview.png';
 import { StarOutlined, PlayCircleFilled } from '@ant-design/icons';
 import carVideo from '../assets/carVideo.png';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence, easeInOut, delay } from 'framer-motion';
+import { motion, AnimatePresence, easeInOut } from 'framer-motion';
 
 // Slide animations
 const slideFadeInOut = {

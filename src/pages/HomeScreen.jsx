@@ -3,7 +3,7 @@ import teslaLogo from '../assets/Tesla Logo.png';
 import mainCar from '../assets/mainCar.png';
 import { DownCircleOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import {  motion } from 'framer-motion';
 
 const bgVariant = {
   enter: {
