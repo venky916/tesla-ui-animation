@@ -3,13 +3,13 @@ import teslaLogo from '../assets/Tesla Logo.png';
 import mainCar from '../assets/mainCar.png';
 import { DownCircleOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const bgVariant = {
   enter: {
     opacity: 0,
     scale: 0.8,
-    x: '+20%',
+    x: '+10%',
     y: '-40%',
     transition: { duration: 0.8 },
   },
@@ -23,7 +23,7 @@ const bgVariant = {
   exit: {
     opacity: 0,
     scale: 0.8,
-    x: '20%',
+    x: '10%',
     y: '-40%',
     transition: { duration: 0.8 },
   },
@@ -111,20 +111,19 @@ const HomeScreen = () => {
           <img src={mainCar} alt="maincar" />
         </motion.div>
         <h6>
-          Order Online for
-          <span className="underline">Touchless Delivery</span>
+          Order Online for <span className="underline">Touchless Delivery</span>
         </h6>
-        <DownCircleOutlined className="text-black/25 w-6 h-6" />
+        <DownCircleOutlined className="text-black/25 text-4xl" />
       </div>
 
       {/* Checkout Button with Conditional Animation */}
-      <div className="absolute right-32 bottom-80">
+      <div className="absolute right-32 bottom-[325px]">
         <motion.button
           ref={buttonRef}
           onClick={() => navigate('/detail')}
           className="border border-black w-56 h-14 px-14 py-4 font-medium text-base"
           animate={{
-            backgroundColor: animateButton ? '#BFDBFE80' : '#FFFFFF'
+            backgroundColor: animateButton ? '#BFDBFE80' : '#FFFFFF',
           }}
           transition={{
             duration: 1, // Controls the speed of the fade-out effect

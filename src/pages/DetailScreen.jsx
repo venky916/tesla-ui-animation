@@ -83,7 +83,7 @@ const DetailScreen = () => {
           <img
             src={mainCar}
             alt="maincar"
-            className="-rotate-90 w-[700px] relative -left-32 h-auto "
+            className="-rotate-90 h-auto relative -left-20"
           />
         </motion.div>
 
@@ -144,8 +144,8 @@ const DetailScreen = () => {
                       alt="carvideo"
                       className="w-full h-auto"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <PlayCircleFilled className="text-white text-4xl" />
+                    <div className="absolute inset-0 flex items-center justify-center left-20">
+                      <PlayCircleFilled className="text-white text-6xl" />
                     </div>
                   </div>
                 </div>
