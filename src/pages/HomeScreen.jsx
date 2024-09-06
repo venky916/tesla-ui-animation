@@ -29,7 +29,6 @@ const bgVariant = {
 const carVariant = {
   enter: {
     opacity: 0,
-    scale: 1.2,
     rotate: -90,
     x: '+20%',
     y: '+20%',
@@ -37,7 +36,6 @@ const carVariant = {
   },
   visible: {
     opacity: 1,
-    scale: 1,
     x: 0,
     y: 0,
     rotate: 0,
@@ -45,7 +43,6 @@ const carVariant = {
   },
   exit: {
     opacity: 0,
-    scale: 1.2,
     rotate: -90,
     x: '-20%',
     y: '-20%',
@@ -56,7 +53,6 @@ const fadeOut = {
   enter : {opacity :0.5},
   visible: { opacity: 1 },
   exit: { opacity: 0.5 },
-  transition: { duration: 0.8 },
 };
 const HomeScreen = () => {
   const [animateButton, setAnimateButton] = useState(false);
@@ -86,9 +82,7 @@ const HomeScreen = () => {
   return (
     <motion.div className="font-montserrat"
       variants={ fadeOut }
-      initial="enter"
       animate="visible"
-      exit="exit"
     >
       <motion.div
         className="absolute flex items-center justify-center w-full mx-auto my-24"

@@ -19,7 +19,6 @@ const fadeOut = {
   enter: { opacity: 0.5 },
   visible: { opacity: 1 },
   exit: { opacity: 0.5 },
-  transition: { duration: 0.8 },
 };
 
 const DetailScreen = () => {
@@ -44,9 +43,7 @@ const DetailScreen = () => {
     <motion.div
       className="font-montserrat h-screen overflow-hidden"
       variants={fadeOut}
-      initial="enter"
       animate="visible"
-      exit="exit"
       onClick={handlePageClick} // Trigger animation when page is clicked
     >
       <span
@@ -82,7 +79,7 @@ const DetailScreen = () => {
         </div>
 
         <motion.div
-          initial={!up ? { y: '0%' } : { y: '-70%' }} // Adjust sliding range
+          initial={!up ? { y: '-50%' } : { y: '-70%' }} // Adjust sliding range
           animate={!up ? { y: '-70%' } : { y: '70%' }} // Adjust sliding range
           transition={{ duration: 1 }} // Control the speed of the animation
         >
