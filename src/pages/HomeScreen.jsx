@@ -55,7 +55,12 @@ const carVariant = {
     transition: { duration: 0.8 },
   },
 };
-
+const fadeOut = {
+  hidden : {opacity :0.5},
+  visible: { opacity: 1 },
+  exit: { opacity: 0.5 },
+  transition: { duration: 0.8 },
+};
 const HomeScreen = () => {
   const [animateButton, setAnimateButton] = useState(false);
   const navigate = useNavigate();
@@ -82,10 +87,16 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <div className="font-montserrat">
+    <motion.div className="font-montserrat"
+      variants={ fadeOut }
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <motion.div
         className="absolute flex items-center justify-center w-full mx-auto my-24"
-        variants={bgVariant}
+        variants={ bgVariant }
+        initial="enter"
         animate="visible"
         exit="exit"
       >
@@ -104,7 +115,8 @@ const HomeScreen = () => {
         <h1 className="font-extrabold italic text-6xl">MODEL X</h1>
         <motion.div
           className="w-[672px] h-[316px]"
-          variants={carVariant}
+          variants={ carVariant }
+          initial="enter"
           animate="visible"
           exit="exit"
         >
@@ -132,7 +144,7 @@ const HomeScreen = () => {
           Checkout →
         </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

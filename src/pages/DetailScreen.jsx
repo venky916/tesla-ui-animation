@@ -6,7 +6,7 @@ import carSideView from '../assets/carsideview.png';
 import { StarOutlined, PlayCircleFilled } from '@ant-design/icons';
 import carVideo from '../assets/carVideo.png';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence, easeInOut } from 'framer-motion';
+import { motion, AnimatePresence, easeInOut, delay } from 'framer-motion';
 
 // Slide animations
 const slideFadeInOut = {
@@ -15,6 +15,12 @@ const slideFadeInOut = {
   exit: { opacity: 0, x: 100 },
 };
 
+const fadeOut = {
+  hidden: { opacity: 0.5 },
+  visible: { opacity: 1 },
+  exit: { opacity: 0.5 },
+  transition: { duration: 0.8 },
+};
 const DetailScreen = () => {
   const [up, setUp] = useState(false);
   const [animate, setAnimate] = useState(false); // State to trigger background animation
@@ -34,8 +40,12 @@ const DetailScreen = () => {
   };
 
   return (
-    <div
+    <motion.div
       className="font-montserrat h-screen overflow-hidden"
+      variants={fadeOut}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
       onClick={handlePageClick} // Trigger animation when page is clicked
     >
       <span
@@ -157,7 +167,7 @@ const DetailScreen = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
