@@ -11,21 +11,18 @@ const bgVariant = {
     scale: 0.8,
     x: '+10%',
     y: '-40%',
-    transition: { duration: 0.8 },
   },
   visible: {
     opacity: 1,
     scale: 1,
     x: 0,
     y: 0,
-    transition: { duration: 0.8 },
   },
   exit: {
     opacity: 0,
     scale: 0.8,
     x: '10%',
     y: '-40%',
-    transition: { duration: 0.8 },
   },
 };
 
@@ -36,7 +33,7 @@ const carVariant = {
     rotate: -90,
     x: '+20%',
     y: '+20%',
-    transition: { duration: 0.8 },
+    transition: { duration: 0.5 },
   },
   visible: {
     opacity: 1,
@@ -44,7 +41,7 @@ const carVariant = {
     x: 0,
     y: 0,
     rotate: 0,
-    transition: { duration: 0.8 },
+    transition: { duration: 0.5 },
   },
   exit: {
     opacity: 0,
@@ -52,11 +49,11 @@ const carVariant = {
     rotate: -90,
     x: '-20%',
     y: '-20%',
-    transition: { duration: 0.8 },
+    transition: { duration: 0.5 },
   },
 };
 const fadeOut = {
-  hidden : {opacity :0.5},
+  enter : {opacity :0.5},
   visible: { opacity: 1 },
   exit: { opacity: 0.5 },
   transition: { duration: 0.8 },
@@ -89,7 +86,7 @@ const HomeScreen = () => {
   return (
     <motion.div className="font-montserrat"
       variants={ fadeOut }
-      initial="hidden"
+      initial="enter"
       animate="visible"
       exit="exit"
     >
@@ -138,7 +135,7 @@ const HomeScreen = () => {
             backgroundColor: animateButton ? '#BFDBFE80' : '#FFFFFF',
           }}
           transition={{
-            duration: 1, // Controls the speed of the fade-out effect
+            duration: 0.5, // Controls the speed of the fade-out effect
           }}
         >
           Checkout →
